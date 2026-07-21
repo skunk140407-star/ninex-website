@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+  font-family: var(--font-space), sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.glow {
+  box-shadow:
+    0 0 25px rgba(139,92,246,.35),
+    0 0 60px rgba(139,92,246,.20);
+}
+
+.glass {
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}

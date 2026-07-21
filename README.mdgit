@@ -1,0 +1,1 @@
+"# ninex"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/skunk140407-star/ninex.gitgit push -u origin main
