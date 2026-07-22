@@ -1,89 +1,186 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <section
-      id="sobre"
-      className="relative py-36 overflow-hidden bg-[#050505]"
+  id="sobre"
+  className="relative overflow-hidden bg-[#07070A] py-40"
     >
       {/* Glow */}
-      <div className="absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-violet-700/20 blur-[180px]" />
+      <div className="absolute -left-48 top-0 h-[600px] w-[600px] rounded-full bg-violet-700/20 blur-[220px]" />
+      <div className="absolute -right-52 bottom-0 h-[550px] w-[550px] rounded-full bg-fuchsia-700/15 blur-[220px]" />
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-24 px-8 lg:flex-row">
 
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-20 px-8 lg:flex-row">
+{/* Imagem */}
 
-        {/* Imagem */}
-        <div className="relative flex-1">
-          <div className="absolute inset-0 rounded-3xl bg-violet-600/20 blur-3xl" />
+<motion.div
+  initial={{ opacity: 0, x: -60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: .8 }}
+  className="relative flex-1 flex justify-center"
+>
 
-          <Image
-            src="/images/about.png"
-            alt="NineX"
-            width={650}
-            height={750}
-            className="relative z-10 rounded-3xl"
-          />
-        </div>
+  {/* Glow */}
 
-        {/* Texto */}
-        <div className="flex-1">
+  <div className="absolute h-[650px] w-[650px] rounded-full bg-violet-600/20 blur-[180px]" />
 
-          <span className="text-sm uppercase tracking-[6px] text-violet-400">
-            Sobre a NineX
-          </span>
+  <div className="absolute h-[420px] w-[420px] rounded-full bg-fuchsia-500/15 blur-[140px]" />
 
-          <h2 className="mt-6 text-5xl font-black leading-tight lg:text-6xl">
-            Mais que uma organização.
-            <br />
-            <span className="text-violet-400">
-              Uma referência no competitivo.
-            </span>
-          </h2>
+  {/* Logo ao fundo */}
 
-          <p className="mt-8 text-lg leading-9 text-white/70">
-            A <strong className="text-white">NineX</strong> nasceu em
-            <strong className="text-violet-400"> 2022</strong> com o objetivo de
-            reunir jogadores competitivos do FiveM.
-          </p>
+  <Image
+    src="/images/logo.png"
+    alt="Logo"
+    width={700}
+    height={700}
+    draggable={false}
+    className="
+      absolute
+      w-[420px]
+      opacity-[0.06]
+      blur-[2px]
+      select-none
+      pointer-events-none
+      lg:w-[560px]
+    "
+  />
 
-          <p className="mt-5 text-lg leading-9 text-white/70">
-            Ao longo do tempo conquistou
-            <strong className="text-violet-400">
-              {" "}17 campeonatos
-            </strong>{" "}
-            e se consolidou como uma das maiores organizações competitivas
-            da comunidade.
-          </p>
+  {/* Personagem */}
 
-          {/* Cards */}
-          <div className="mt-12 grid grid-cols-2 gap-5">
+  <motion.div
+    animate={{
+      y: [0, -10, 0],
+    }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="relative z-10"
+  >
 
-            <div className="glass rounded-3xl p-6">
-              <h3 className="text-4xl font-black text-violet-400">
-                2022
-              </h3>
+    <Image
+      src="/images/about.png"
+      alt="NineX"
+      width={700}
+      height={850}
+      draggable={false}
+      className="
+        rounded-3xl
+        drop-shadow-[0_0_100px_rgba(139,92,246,.55)]
+      "
+    />
 
-              <p className="mt-2 text-white/60">
-                Fundação
-              </p>
-            </div>
+  </motion.div>
 
-            <div className="glass rounded-3xl p-6">
-              <h3 className="text-4xl font-black text-violet-400">
-                17
-              </h3>
+</motion.div>
 
-              <p className="mt-2 text-white/60">
-                Campeonatos
-              </p>
-            </div>
+{/* Texto */}
 
-          </div>
+<motion.div
+  initial={{ opacity: 0, x: 60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: .8 }}
+  className="flex-1"
+>
 
-        </div>
+  <span className="text-sm font-semibold uppercase tracking-[8px] text-violet-400">
+    Sobre a NineX
+  </span>
+
+  <h2 className="mt-6 text-5xl font-black leading-tight text-white lg:text-6xl">
+
+    Mais que uma
+
+    <br />
+
+    <span className="text-violet-500">
+      organização.
+    </span>
+
+  </h2>
+
+  <p className="mt-8 text-lg leading-9 text-white/70">
+
+    A NineX nasceu em <span className="font-bold text-violet-400">2022</span>
+    com o objetivo de reunir os melhores jogadores competitivos do FiveM,
+    formando uma organização focada em evolução, disciplina e resultados.
+
+  </p>
+
+  <p className="mt-6 text-lg leading-9 text-white/70">
+
+    Hoje somos uma das equipes mais respeitadas da comunidade,
+    acumulando títulos, grandes campanhas e uma base sólida de membros.
+
+  </p>
+
+  <div className="mt-12 grid grid-cols-2 gap-5">
+
+    {[
+      {
+        number: "2022",
+        title: "Fundação",
+      },
+      {
+        number: "17",
+        title: "Campeonatos",
+      },
+      {
+        number: "300+",
+        title: "Membros",
+      },
+      {
+        number: "97%",
+        title: "Win Rate",
+      },
+    ].map((item) => (
+
+      <motion.div
+        key={item.title}
+        whileHover={{
+          y: -8,
+          scale: 1.03,
+        }}
+        transition={{
+          duration: .25,
+        }}
+        className="
+          rounded-3xl
+          border
+          border-white/10
+          bg-white/[0.04]
+          p-6
+          backdrop-blur-xl
+          transition-all
+          hover:border-violet-500/30
+          hover:bg-white/[0.06]
+        "
+      >
+
+        <h3 className="text-4xl font-black text-violet-400">
+          {item.number}
+        </h3>
+
+        <p className="mt-2 text-white/60">
+          {item.title}
+        </p>
+
+      </motion.div>
+
+    ))}
+
+  </div>
+
+  </motion.div>
 
       </div>
+
     </section>
   );
 }

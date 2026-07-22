@@ -1,229 +1,278 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { fadeUp, scaleIn, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#09090B]">
-
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[#05050A]"
+    >
       {/* Background */}
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#05050A] via-[#09070F] to-[#12071A]" />
 
-        <div className="absolute inset-0 bg-gradient-to-br from-[#09090B] via-[#13071F] to-[#09090B]" />
+      <div className="absolute -left-72 top-0 h-[850px] w-[850px] rounded-full bg-violet-600/20 blur-[220px]" />
 
-        <div className="absolute left-[-250px] top-[-250px] h-[600px] w-[600px] rounded-full bg-violet-700/15 blur-[180px]" />
+      <div className="absolute -right-72 top-0 h-[850px] w-[850px] rounded-full bg-fuchsia-600/15 blur-[220px]" />
 
-        <div className="absolute right-[-250px] bottom-[-250px] h-[600px] w-[600px] rounded-full bg-fuchsia-700/15 blur-[180px]" />
+      <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:70px_70px]" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,.025)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24">
 
-      </div>
+        <div className="grid w-full items-center gap-20 lg:grid-cols-2">
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6">
-
-        <div className="grid w-full items-center gap-16 lg:grid-cols-2">
-
-          {/* Conteúdo */}
+          {/* LEFT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: .8 }}
           >
 
-            <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-violet-300">
-              Organização Competitiva
-            </span>
+            {/* Badge */}
 
-            <h1 className="mt-8 text-6xl font-black leading-none text-white md:text-7xl xl:text-8xl">
-              Nine
-              <span className="text-violet-500">X</span>
-            </h1>
+            <div className="inline-flex items-center rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 backdrop-blur-xl">
 
-            <h2 className="mt-8 max-w-xl text-4xl font-bold leading-tight text-white xl:text-5xl">
-              Dominando o cenário competitivo do FiveM.
+              <span className="text-xs font-bold uppercase tracking-[0.35em] text-violet-300">
+                9X CAMPEÃ DA COPA AMÉRICA
+              </span>
+
+            </div>
+
+            {/* Logo */}
+
+            <h2 className="mt-10 text-7xl font-black uppercase leading-none">
+
+              <span className="text-white">
+                NINE
+              </span>
+
+              <span className="text-violet-500">
+                X
+              </span>
+
             </h2>
 
-            <p className="mt-8 max-w-xl text-lg leading-8 text-zinc-400">
-              Reunimos jogadores de alto nível para competir, evoluir e
-              conquistar títulos, construindo uma das organizações mais
-              respeitadas do cenário competitivo.
+            {/* Title */}
+
+            <h1 className="mt-8 leading-[0.9]">
+
+              <span className="block text-[90px] font-black text-white xl:text-[110px]">
+                DOMINANDO
+              </span>
+
+              <span className="block bg-gradient-to-r from-violet-300 via-violet-500 to-fuchsia-500 bg-clip-text text-[90px] font-black text-transparent xl:text-[110px]">
+                O FIVEM.
+              </span>
+
+            </h1>
+
+            {/* Description */}
+
+            <p className="mt-8 max-w-xl text-lg leading-9 text-zinc-400">
+              A NineX reúne alguns dos melhores jogadores competitivos do
+              FiveM, conquistando títulos nacionais e internacionais enquanto
+              constrói uma comunidade forte e organizada.
             </p>
+
+            {/* Buttons */}
 
             <div className="mt-12 flex flex-wrap gap-5">
 
-              <Link
-                href="#"
-                className="group flex items-center gap-3 rounded-full bg-violet-600 px-8 py-4 font-semibold text-white transition hover:bg-violet-500"
+              <a
+                href="#championships"
+                className="rounded-2xl bg-violet-600 px-9 py-5 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-violet-500 shadow-[0_0_45px_rgba(139,92,246,.45)]"
               >
-                Entrar no Discord
+                Ver Conquistas
+              </a>
 
-                <ArrowRight
-                  size={18}
-                  className="transition group-hover:translate-x-1"
-                />
-
-              </Link>
-
-              <Link
-  href="https://discord.gg/ninex"
-  target="_blank"
-  rel="noopener noreferrer"
-                className="rounded-full border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md transition hover:border-violet-500/30 hover:bg-white/10"
+              <a
+                href="#team"
+                className="rounded-2xl border border-white/10 bg-white/5 px-9 py-5 text-lg font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-violet-500 hover:bg-violet-500/10"
               >
-                Conheça a NineX
-              </Link>
+                Nossa Equipe
+              </a>
+
             </div>
+                        {/* Championship Card */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-16"
+            >
+              <div className="grid grid-cols-3 overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl">
+
+                <div className="border-r border-white/10 px-8 py-7">
+                  <p className="text-5xl font-black text-violet-500">
+                    9x
+                  </p>
+
+                  <h3 className="mt-3 text-xl font-bold text-white">
+                    Campeã
+                  </h3>
+
+                  <p className="mt-1 text-sm text-zinc-400">
+                    Copa América
+                  </p>
+                </div>
+
+                <div className="border-r border-white/10 px-8 py-7">
+                  <p className="text-5xl font-black text-violet-500">
+                    7x
+                  </p>
+
+                  <h3 className="mt-3 text-xl font-bold text-white">
+                    Pro League
+                  </h3>
+
+                  <p className="mt-1 text-sm text-zinc-400">
+                    Campeã
+                  </p>
+                </div>
+
+                <div className="px-8 py-7">
+                  <p className="text-5xl font-black text-violet-500">
+                    3x
+                  </p>
+
+                  <h3 className="mt-3 text-xl font-bold text-white">
+                    Arena Cup
+                  </h3>
+
+                  <p className="mt-1 text-sm text-zinc-400">
+                    Campeã
+                  </p>
+                </div>
+
+              </div>
+            </motion.div>
 
           </motion.div>
 
-          {/* Personagem */}
+          {/* RIGHT */}
 
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center lg:justify-end"
+            transition={{ duration: 0.8 }}
+            className="relative flex items-center justify-center"
           >
-            {/* Glow */}
+                        {/* Purple Glow */}
 
-            <div
-              className="
-                absolute
-                left-1/2
-                top-1/2
-                h-[900px]
-                w-[700px]
-                -translate-x-1/2
-                -translate-y-1/2
-                rounded-full
-                bg-violet-500/30
-                blur-[100px]
-              "
-            />
+            <div className="absolute h-[700px] w-[700px] rounded-full bg-violet-600/20 blur-[180px]" />
 
-            {/* Luz inferior */}
-
-            <div
-              className="
-                absolute
-                bottom-0
-                h-40
-                w-96
-                rounded-full
-                bg-violet-500/25
-                blur-[90px]
-              "
-            />
-
-            {/* Personagem */}
+            {/* Hero Card */}
 
             <motion.div
               animate={{
-                y: [0, -10, 0],
+                y: [-8, 8, -8],
               }}
               transition={{
-                duration: 5,
+                duration: 6,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative z-10"
+              className="relative rounded-[40px] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-2xl"
             >
+              {/* Image */}
+
               <Image
                 src="/images/hero.png"
                 alt="NineX"
-                width={900}
-                height={1200}
+                width={760}
+                height={900}
                 priority
-                draggable={false}
-                className="
-                  h-auto
-                  w-[1500px]
-                  select-none
-                  drop-shadow-[0_0_100px_rgba(124,58,237,.55)]
-                  lg:w-[1000px]
-                  xl:w-[1000px]
-                "
+                className="relative z-10 w-full max-w-[700px] object-contain"
               />
-            </motion.div>
 
-            {/* Detalhes */}
+              {/* Champion Badge */}
 
-            <div className="absolute left-10 top-20 h-2 w-2 rounded-full bg-violet-400" />
-            <div className="absolute right-10 top-36 h-3 w-3 rounded-full bg-fuchsia-500" />
-            <div className="absolute bottom-24 left-24 h-2 w-2 rounded-full bg-violet-300" />
-
-          </motion.div>
-
-        </div>
-
-      </div>
-
-      {/* ================= Stats ================= */}
-
-      <div className="relative z-20 border-t border-white/5 bg-black/20 backdrop-blur-xl">
-        <div className="mx-auto max-w-7xl px-6 py-10">
-
-          <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
-
-            {[
-              {
-                number: "17",
-                title: "Campeonatos",
-              },
-              {
-                number: "300+",
-                title: "Membros",
-              },
-              {
-                number: "2022",
-                title: "Fundação",
-              },
-              {
-                number: "97%",
-                title: "Win Rate",
-              },
-            ].map((item) => (
               <motion.div
-                key={item.title}
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
-                }}
-                transition={{
-                  duration: .2,
-                }}
-                className="
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-7
-                  backdrop-blur-xl
-                "
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute right-6 top-6 z-20 rounded-3xl border border-violet-500/30 bg-[#0A0A10]/80 px-6 py-5 backdrop-blur-xl"
               >
-                <h3 className="text-4xl font-black text-white lg:text-5xl">
-                  {item.number}
+                <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">
+                  CHAMPION
+                </p>
+
+                <h3 className="mt-2 text-5xl font-black text-violet-400">
+                  9x
                 </h3>
 
-                <p className="mt-3 text-zinc-400">
-                  {item.title}
+                <p className="mt-1 text-sm text-zinc-300">
+                  Copa América
                 </p>
               </motion.div>
-            ))}
 
-          </div>
+              {/* Community Badge */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                className="absolute bottom-6 left-6 z-20 rounded-3xl border border-white/10 bg-[#0A0A10]/80 px-6 py-5 backdrop-blur-xl"
+              >
+                <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">
+                  COMUNIDADE
+                </p>
+
+                <h3 className="mt-2 text-5xl font-black text-white">
+                  1K+
+                </h3>
+
+                <p className="mt-1 text-sm text-zinc-300">
+                  Membros
+                </p>
+              </motion.div>
+
+            </motion.div>
+
+          </motion.div>
+                    {/* Floating Glow */}
+
+          <motion.div
+            animate={{
+              y: [-20, 20, -20],
+              x: [-10, 10, -10],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full bg-violet-500/20 blur-[90px]"
+          />
+
+          <motion.div
+            animate={{
+              y: [15, -15, 15],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="pointer-events-none absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-fuchsia-500/15 blur-[120px]"
+          />
 
         </div>
+
       </div>
 
-      {/* Fade */}
+      {/* Bottom Fade */}
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#09090B] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#05050A] via-[#05050A]/80 to-transparent" />
+
+      {/* Decorative Line */}
+
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-[90%] -translate-x-1/2 bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
 
     </section>
   );
